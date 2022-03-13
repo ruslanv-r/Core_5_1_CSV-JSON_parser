@@ -2,6 +2,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -33,7 +34,10 @@ public class Main {
         //Задача 3
         String fromJson = JsonParser.readString("new_data.json");
         System.out.println(fromJson);
-        List<Employee> listFromJson = jsonToList(fromJson);
+        List<Employee> listFromJson = JsonParser.jsonToList(fromJson);
+        for (Employee empl: listFromJson) {
+            System.out.println(empl);
+        }
 
 
     }
