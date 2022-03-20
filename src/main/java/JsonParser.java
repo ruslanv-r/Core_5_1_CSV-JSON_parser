@@ -39,8 +39,8 @@ public class JsonParser {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         try {
-            Object obj = parser.parse(jsonName);
-            JSONArray jsonArray = (JSONArray) obj;
+           // Object obj = parser.parse(jsonName);
+            JSONArray jsonArray = (JSONArray) parser.parse(jsonName);
             for (Object o : jsonArray) {
                 employeeList.add(gson.fromJson(((JSONObject) o).toJSONString(), Employee.class));
 
